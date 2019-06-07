@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchStream } from '../../actions';
+import { callFetchStream } from '../../actions';
 
 class StreamShow extends React.Component {
 	componentDidMount() {
-		this.props.fetchStream(this.props.match.params.id);
+		this.props.callFetchStream(this.props.match.params.id);
 	};
 
 	render() {
@@ -33,5 +33,5 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
 	mapStateToProps,
-	{ fetchStream }
+	{ callFetchStream }
 )(StreamShow);
